@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EmilWallin_Inlämning_1.Products.EnergyDrinks
+﻿namespace EmilWallin_Inlämning_1.Products.EnergyDrinks
 {
     internal class RedBull : EnergyDrink
     {
-        public RedBull()
+        public RedBull() : base()
         {
             this.Name = "Red Bull";
             this.Description = "An energy drink.";

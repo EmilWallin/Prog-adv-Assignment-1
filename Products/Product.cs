@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EmilWallin_Inlämning_1.Products
+﻿namespace EmilWallin_Inlämning_1.Products
 {
     internal abstract class Product : IProduct
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public int Price { get; set; }
+        public string Name { get; protected set; }
+        public string Description { get; protected set; }
+        public int Price { get; protected set; }
+        public ProductCategories ProductCategory { get; protected set; }
 
         public virtual void Buy()
         {
