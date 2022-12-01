@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EmilWallin_Inlämning_1.Products.Sodas
+﻿namespace EmilWallin_Inlämning_1.Products.Sodas
 {
     internal class Soda : Product
     {
         public Soda()
         {
             this.Price = 20;
+            this.ProductCategory = ProductCategories.Sodas;
         }
 
         public override void Use()
