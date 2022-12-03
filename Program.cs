@@ -1,5 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
-using EmilWallin_Inlämning_1.Views.MainView;
+﻿using EmilWallin_Inlämning_1.Views.MainView;
 
+// Start program
 MainView mainView = new();
 mainView.Show();

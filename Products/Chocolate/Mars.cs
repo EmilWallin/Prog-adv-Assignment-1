@@ -4,7 +4,7 @@
     {
         public Mars() : base()
         {
-            this.Name = "Name";
+            this.Name = "Mars";
             this.Description = "A caramel and nougat chocolate bar.";
         }
     }

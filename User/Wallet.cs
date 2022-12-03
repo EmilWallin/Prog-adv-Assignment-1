@@ -2,9 +2,10 @@
 
 namespace EmilWallin_Inlämning_1.User
 {
+    //Class holding information regarding the wallet for the user
     internal class Wallet
     {
-        private List<Money> balance;
+        private List<Money> balance { get; set; }
 
         public Wallet()
         {

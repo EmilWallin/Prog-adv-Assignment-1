@@ -1,10 +1,10 @@
 ﻿namespace EmilWallin_Inlämning_1.Products
 {
-    internal interface IProduct
+    internal interface IProduct<T>
     {
         public void PrintDescription();
 
-        public void Buy();
+        public T Buy();
 
         public void Use();
     }
