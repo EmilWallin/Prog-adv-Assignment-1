@@ -29,8 +29,9 @@ namespace EmilWallin_Inlämning_1.Views.Category
                 PrintVendingMachineHeader();
 
                 PrintMenuOptions();
+                SelectedIndex = InputHandler.HandleInput(MenuOptions, SelectedIndex);
 
-                Console.ReadKey();
+                if (SelectedIndex == -1) break;
             }
         }
     }
