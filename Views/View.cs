@@ -1,4 +1,5 @@
-﻿using EmilWallin_Inlämning_1.Views.Utils;
+﻿using EmilWallin_Inlämning_1.Navigation;
+using EmilWallin_Inlämning_1.Views.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,9 @@ namespace EmilWallin_Inlämning_1.Views
     internal abstract class View : IView
     {
         protected List<MenuOption> MenuOptions { get; set; } = new List<MenuOption>();
+        protected int SelectedIndex { get; set; } = 0;
 
-        protected int SelectedInput { get; set; } = 0;
+        protected MenuInputHandler InputHandler { get; set; } = new();
 
         public virtual void Show()
         {
@@ -21,7 +23,7 @@ namespace EmilWallin_Inlämning_1.Views
 
         protected virtual void PrintMenuOptions()
         {
-            List<string> optionsOutput = MenuOptions.Select(m => m.GetMenuOptionString()).ToList();
+            List<string> optionsOutput = MenuOptions.Select((m, i) => m.GetMenuOptionString(i == SelectedIndex)).ToList();
 
             optionsOutput.ForEach(o => Console.WriteLine(o + "\n"));
         }

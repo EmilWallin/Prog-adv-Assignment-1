@@ -20,7 +20,7 @@ namespace EmilWallin_Inlämning_1.Views.MenuOptions
             action = new Action(() => categoryView.Show());
         }
 
-        public override string GetMenuOptionString(bool selected)
+        public override string GetMenuOptionString(bool selected = false)
         {
             string categoryItems = Product.Products.Where(p => p.ProductCategory == category).Aggregate("", (acc, p) => acc += $"{p.Name,-14}").TrimEnd(',', ' ');
 
@@ -29,7 +29,7 @@ namespace EmilWallin_Inlämning_1.Views.MenuOptions
             output.AppendLine($"{CategoryName.Get(category)}:");
             output.Append($"\t{categoryItems}");
 
-            if (selected) output.Insert(0, "==>");
+            if (selected) output = base.AddSelected(output);
 
             return output.ToString();
         }

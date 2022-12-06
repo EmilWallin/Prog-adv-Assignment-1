@@ -23,7 +23,7 @@ namespace EmilWallin_Inlämning_1.Views.MenuOptions
             output.AppendLine($"{product.Name,-25}Price: {product.Price}");
             output.Append($"\tDescription: {product.Description}");
 
-            if (selected) output.Insert(0, "==>");
+            if (selected) output = base.AddSelected(output);
 
             return output.ToString();
         }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EmilWallin_Inlämning_1.Views
 {
-    internal class MenuOption
+    internal abstract class MenuOption
     {
         protected Action action { get; set; }
 
@@ -16,6 +16,11 @@ namespace EmilWallin_Inlämning_1.Views
         public virtual void Execute()
         {
             action?.Invoke();
+        }
+
+        public virtual StringBuilder AddSelected(StringBuilder option)
+        {
+            return option.Insert(0, "==> ");
         }
     }
 }

@@ -39,6 +39,8 @@ namespace EmilWallin_Inlämning_1.User
             Console.WriteLine($"{fifties} 50kr");
             Console.WriteLine($"{hundreds} 100kr");
             Console.WriteLine();
+            Console.WriteLine("Press any key to continue.");
+            Console.ReadKey();
         }
 
         public int Balance

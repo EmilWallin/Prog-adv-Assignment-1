@@ -1,4 +1,5 @@
-﻿using EmilWallin_Inlämning_1.Products;
+﻿using EmilWallin_Inlämning_1.Navigation;
+using EmilWallin_Inlämning_1.Products;
 using EmilWallin_Inlämning_1.Products.Chocolate;
 using EmilWallin_Inlämning_1.Products.EnergyDrinks;
 using EmilWallin_Inlämning_1.Products.Sodas;
@@ -9,14 +10,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static EmilWallin_Inlämning_1.Navigation.InputEnums;
 
 namespace EmilWallin_Inlämning_1.Views.MainView
 {
     // Main view class. Called upon from Program.Main(). Console main menu
     internal class MainView : View
     {
+        private User.Wallet wallet { get; set; }
+
         public MainView()
         {
+            // Initiate wallet
+            wallet = new();
+
             // Initialize Products array for showing supply
             Product.Products = new Product[]
             {
@@ -38,7 +45,7 @@ namespace EmilWallin_Inlämning_1.Views.MainView
             }
 
             //MenuOptions.Add(new CustomOption("Backpack"));
-            //MenuOptions.Add(new CustomOption("Check Balance"));
+            MenuOptions.Add(new CustomOption("Check Balance", () => wallet.PrintBalance()));
             //MenuOptions.Add(new CustomOption("Leave Vending Machine"));
         }
 
@@ -50,8 +57,7 @@ namespace EmilWallin_Inlämning_1.Views.MainView
                 PrintVendingMachineHeader();
 
                 PrintMenuOptions();
-
-                Console.ReadKey();
+                SelectedIndex = InputHandler.HandleInput(MenuOptions, SelectedIndex);
             }
         }
 
