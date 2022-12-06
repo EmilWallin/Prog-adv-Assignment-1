@@ -10,6 +10,15 @@ namespace EmilWallin_Inlämning_1.Navigation
 {
     internal class MenuInputHandler : InputHandler<MenuInputs>
     {
+        public override int HandleInput(List<MenuOption> menuOptions, int selectedIndex)
+        {
+            Console.WriteLine("Navigate the menu with [ArrowUp] and [ArrowDown].");
+            Console.WriteLine("Press [Enter] to interact.");
+            Console.WriteLine("To return/exit press [Backspace].");
+
+            return base.HandleInput(menuOptions, selectedIndex);
+        }
+
         protected override int ExecuteInput(string key, List<MenuOption> menuOptions, int selectedIndex)
         {
             MenuInputs input = (MenuInputs)Enum.Parse(typeof(MenuInputs), key);
@@ -25,8 +34,7 @@ namespace EmilWallin_Inlämning_1.Navigation
                     menuOptions[selectedIndex].Execute();
                     break;
 
-                case MenuInputs.Delete:
-                case MenuInputs.Escape:
+                case MenuInputs.Backspace:
                     return -1;
 
                 default:

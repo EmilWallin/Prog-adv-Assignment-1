@@ -16,12 +16,12 @@ namespace EmilWallin_Inlämning_1.Views.MenuOptions
             this.product = product;
         }
 
-        public override string GetMenuOptionString(bool selected)
+        public override string GetMenuOptionString(bool selected = false)
         {
             StringBuilder output = new();
 
-            output.AppendLine($"{product.Name,-25}Price: {product.Price}");
-            output.Append($"\tDescription: {product.Description}");
+            output.AppendLine($"{product.Name,-25}Price: {product.Price}kr");
+            output.Append($"\t{product.Description}");
 
             if (selected) output = base.AddSelected(output);
 

@@ -13,7 +13,7 @@ namespace EmilWallin_Inlämning_1.Views.MenuOptions
         public CustomOption(string optionText, Action action)
         {
             this.optionText = optionText;
-            this.action = action;
+            this.Action = action;
         }
 
         public override string GetMenuOptionString(bool selected = false)

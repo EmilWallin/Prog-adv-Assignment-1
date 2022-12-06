@@ -30,14 +30,15 @@ namespace EmilWallin_Inlämning_1.User
             int fifties = balance.Count(b => b.Value == 50);
             int hundreds = balance.Count(b => b.Value == 100);
 
+            Console.Clear();
             Console.WriteLine($"Your wallet contains a total of {total}kr.");
             Console.WriteLine("It consists of:");
-            Console.WriteLine($"{ones} 1kr");
-            Console.WriteLine($"{fives} 5kr");
-            Console.WriteLine($"{tens} 10kr");
-            Console.WriteLine($"{twenties} 20kr");
-            Console.WriteLine($"{fifties} 50kr");
-            Console.WriteLine($"{hundreds} 100kr");
+            Console.WriteLine($"{ones}x 1kr");
+            Console.WriteLine($"{fives}x 5kr");
+            Console.WriteLine($"{tens}x 10kr");
+            Console.WriteLine($"{twenties}x 20kr");
+            Console.WriteLine($"{fifties}x 50kr");
+            Console.WriteLine($"{hundreds}x 100kr");
             Console.WriteLine();
             Console.WriteLine("Press any key to continue.");
             Console.ReadKey();

@@ -21,9 +21,6 @@ namespace EmilWallin_Inlämning_1.Views.MainView
 
         public MainView()
         {
-            // Initiate wallet
-            wallet = new();
-
             // Initialize Products array for showing supply
             Product.Products = new Product[]
             {
@@ -44,8 +41,10 @@ namespace EmilWallin_Inlämning_1.Views.MainView
                 MenuOptions.Add(new CategoryOption(category));
             }
 
-            //MenuOptions.Add(new CustomOption("Backpack"));
-            MenuOptions.Add(new CustomOption("Check Balance", () => wallet.PrintBalance()));
+            BackpackView bpView = new();
+
+            MenuOptions.Add(new CustomOption("Backpack", () => bpView.Show()));
+            MenuOptions.Add(new CustomOption("Check Balance", () => User.User.Wallet.PrintBalance()));
             //MenuOptions.Add(new CustomOption("Leave Vending Machine"));
         }
 
@@ -58,7 +57,21 @@ namespace EmilWallin_Inlämning_1.Views.MainView
 
                 PrintMenuOptions();
                 SelectedIndex = InputHandler.HandleInput(MenuOptions, SelectedIndex);
+
+                if (SelectedIndex == -1)
+                {
+                    PrintGoodbyeMessage();
+                    return;
+                }
             }
+        }
+
+        private void PrintGoodbyeMessage()
+        {
+            Console.Clear();
+            Console.WriteLine("Now leaving the vending machine app.");
+            Console.WriteLine("Goodbye!");
+            Thread.Sleep(1000);
         }
 
         protected override void PrintMenuOptions()
