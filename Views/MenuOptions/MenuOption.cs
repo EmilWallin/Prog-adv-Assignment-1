@@ -6,7 +6,7 @@ namespace EmilWallin_Inlämning_1.Views
 {
     internal abstract class MenuOption
     {
-        protected Action action { get; set; }
+        protected Action Action { get; set; }
 
         public virtual string GetMenuOptionString(bool selected = false)
         {
@@ -15,7 +15,7 @@ namespace EmilWallin_Inlämning_1.Views
 
         public virtual void Execute()
         {
-            action?.Invoke();
+            Action?.Invoke();
         }
 
         public virtual StringBuilder AddSelected(StringBuilder option)

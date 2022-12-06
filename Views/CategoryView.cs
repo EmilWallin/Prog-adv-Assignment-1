@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmilWallin_Inlämning_1.Views.Category
+namespace EmilWallin_Inlämning_1.Views
 {
     // Category viewing class. Used for viewing products of a given category
     internal class CategoryView : View

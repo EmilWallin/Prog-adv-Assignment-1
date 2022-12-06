@@ -1,4 +1,5 @@
-﻿using EmilWallin_Inlämning_1.Views.MainView;
+﻿using EmilWallin_Inlämning_1.User;
+using EmilWallin_Inlämning_1.Views.MainView;
 
 // Start program
 MainView mainView = new();

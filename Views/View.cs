@@ -12,9 +12,8 @@ namespace EmilWallin_Inlämning_1.Views
     internal abstract class View : IView
     {
         protected List<MenuOption> MenuOptions { get; set; } = new List<MenuOption>();
-        protected int SelectedIndex { get; set; } = 0;
-
         protected MenuInputHandler InputHandler { get; set; } = new();
+        protected int SelectedIndex { get; set; } = 0;
 
         public virtual void Show()
         {

@@ -12,19 +12,15 @@ namespace EmilWallin_Inlämning_1.Navigation
     internal abstract class InputHandler<T>
     {
         // Input method, valid keys will be part of T (enum)
-        public int HandleInput(List<MenuOption> menuOptions, int selectedIndex)
+        public virtual int HandleInput(List<MenuOption> menuOptions, int selectedIndex)
         {
             if (!typeof(T).IsEnum) throw new ArgumentException("T must be an enum.");
 
             string key;
             string[] validInputs = Enum.GetNames(typeof(T));
 
-            string allInputsString = validInputs.Aggregate("", (acc, s) => acc += $"{s}, ").TrimEnd(',', ' ');
-
             while (true)
             {
-                Console.WriteLine("Navigate the menu by inputing any of the valid inputs:");
-                Console.WriteLine(allInputsString);
                 key = Console.ReadKey().Key.ToString();
                 ConsoleUtils.ClearCurrentLine();
 
@@ -35,6 +31,7 @@ namespace EmilWallin_Inlämning_1.Navigation
                 else
                 {
                     Console.WriteLine("Invalid input. Please try again.");
+                    Thread.Sleep(1000);
                     return selectedIndex;
                 }
             }

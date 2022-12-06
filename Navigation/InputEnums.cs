@@ -13,8 +13,7 @@ namespace EmilWallin_Inlämning_1.Navigation
             UpArrow,
             DownArrow,
             Enter,
-            Delete,
-            Escape
+            Backspace
         }
     }
 }

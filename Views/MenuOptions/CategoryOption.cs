@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EmilWallin_Inlämning_1.Views.Category;
 
 namespace EmilWallin_Inlämning_1.Views.MenuOptions
 {
@@ -17,7 +16,7 @@ namespace EmilWallin_Inlämning_1.Views.MenuOptions
         {
             this.category = category;
             categoryView = new CategoryView(category);
-            action = new Action(() => categoryView.Show());
+            Action = new Action(() => categoryView.Show());
         }
 
         public override string GetMenuOptionString(bool selected = false)
