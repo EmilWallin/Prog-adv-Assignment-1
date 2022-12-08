@@ -4,8 +4,8 @@
     {
         public Snickers() : base()
         {
-            this.Name = "Snickers";
-            this.Description = "A nougat, caramel, and peanut chocolate bar.";
+            Name = "Snickers";
+            Description = "A nougat, caramel, and peanut chocolate bar.";
         }
     }
 }

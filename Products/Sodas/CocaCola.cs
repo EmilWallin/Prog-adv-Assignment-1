@@ -4,8 +4,8 @@
     {
         public CocaCola() : base()
         {
-            this.Name = "Coca Cola";
-            this.Description = "The classic cola.";
+            Name = "Coca Cola";
+            Description = "The classic cola.";
         }
     }
 }

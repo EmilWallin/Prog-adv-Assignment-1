@@ -4,9 +4,9 @@
     {
         public Powerking() : base()
         {
-            this.Name = "Powerking";
-            this.Description = "An energy drink.";
-            this.Price = 19;
+            Name = "Powerking";
+            Description = "An energy drink.";
+            Price = 19;
         }
     }
 }

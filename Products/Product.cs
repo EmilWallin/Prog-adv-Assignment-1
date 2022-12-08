@@ -12,12 +12,7 @@
         public virtual Product Buy()
         {
             Console.WriteLine($"You bought one {Name}.");
-            return (Product)this.MemberwiseClone();
-        }
-
-        public virtual void PrintDescription()
-        {
-            Console.WriteLine($"{Name}:\n{Description}");
+            return (Product)MemberwiseClone();
         }
 
         public virtual void Use()

@@ -4,9 +4,9 @@
     {
         public RedBull() : base()
         {
-            this.Name = "Red Bull";
-            this.Description = "An energy drink.";
-            this.Price = 24;
+            Name = "Red Bull";
+            Description = "An energy drink.";
+            Price = 24;
         }
     }
 }

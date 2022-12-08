@@ -4,9 +4,9 @@
     {
         public Monster() : base()
         {
-            this.Name = "Monster Energy";
-            this.Description = "Original Monster Energy flavor.";
-            this.Price = 31;
+            Name = "Monster Energy";
+            Description = "Original Monster Energy flavor.";
+            Price = 31;
         }
     }
 }

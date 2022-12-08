@@ -1,20 +1,18 @@
 ﻿using EmilWallin_Inlämning_1.User.Values;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace EmilWallin_Inlämning_1.Views.MenuOptions
 {
+    // A menu option for displaying groups of a money value for use when purchasing
     internal class MoneyOption : MenuOption
     {
         private List<Money> Money { get; set; }
 
+        // For use when purchasing a product
         public MoneyOption(List<Money> money)
         {
-            this.Money = money;
-            this.Action = () =>
+            Money = money;
+            Action = () =>
             {
                 Console.Clear();
                 if (User.User.Wallet.Input(Money[0]))
@@ -29,6 +27,13 @@ namespace EmilWallin_Inlämning_1.Views.MenuOptions
             };
         }
 
+        // For use in walletview where no purchase should be done
+        public MoneyOption(List<Money> money, Action customAction)
+        {
+            Money = money;
+            Action = customAction;
+        }
+
         public override string GetMenuOptionString(bool selected = false)
         {
             StringBuilder output = new();
@@ -40,7 +45,7 @@ namespace EmilWallin_Inlämning_1.Views.MenuOptions
             return output.ToString();
         }
 
-        public override StringBuilder AddSelected(StringBuilder output)
+        protected override StringBuilder AddSelected(StringBuilder output)
         {
             output.Append("\t[Enter] to put into vending machine.");
             return base.AddSelected(output);

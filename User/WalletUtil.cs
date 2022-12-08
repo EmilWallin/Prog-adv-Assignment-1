@@ -1,15 +1,11 @@
 ﻿using EmilWallin_Inlämning_1.User.Values;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmilWallin_Inlämning_1.User
 {
     internal class WalletUtil
     {
-        private static Dictionary<int, Money> moneyValues = new()
+        // value money relationship
+        private static readonly Dictionary<int, Money> moneyValues = new()
             {
                 {
                     1,
@@ -37,6 +33,7 @@ namespace EmilWallin_Inlämning_1.User
                 }
             };
 
+        // Both returns and prints the values of the change
         public static List<Money> GetChange(int change)
         {
             List<Money> returnMoney = new();
@@ -55,7 +52,7 @@ namespace EmilWallin_Inlämning_1.User
 
                 if (noOfMoney != 0) Console.WriteLine($"{noOfMoney}x {moneyValues[value].Value}kr");
 
-                change = change - (value * noOfMoney);
+                change -= (value * noOfMoney);
             }
 
             return returnMoney;

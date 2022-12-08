@@ -1,26 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace EmilWallin_Inlämning_1.Views.MenuOptions
 {
+    // Custom menu option for a custom screen message and a custom action to be performed upon selection
     internal class CustomOption : MenuOption
     {
-        private string optionText { get; set; }
+        private string OptionText { get; set; }
 
         public CustomOption(string optionText, Action action)
         {
-            this.optionText = optionText;
-            this.Action = action;
+            OptionText = optionText;
+            Action = action;
         }
 
         public override string GetMenuOptionString(bool selected = false)
         {
             StringBuilder output = new();
 
-            output.Append(optionText);
+            output.Append(OptionText);
             if (selected) output = base.AddSelected(output);
 
             return output.ToString();

@@ -1,21 +1,16 @@
 ﻿using EmilWallin_Inlämning_1.Products;
-using EmilWallin_Inlämning_1.User.Values;
 using EmilWallin_Inlämning_1.Views.MenuOptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmilWallin_Inlämning_1.Views
 {
+    // View for when user is purchasing a product
     internal class PurchaseView : View
     {
         private Product Product { get; }
 
         public PurchaseView(Product product)
         {
-            this.Product = product;
+            Product = product;
         }
 
         public override void Show()
@@ -48,10 +43,11 @@ namespace EmilWallin_Inlämning_1.Views
                     return;
                 }
 
+                // -1 is returned from user pressing [Backspace] (aka return/exit)
                 if (SelectedIndex == -1)
                 {
-                    // Cancel Purchase
-                    MenuOptions[^1].Execute();
+                    // Cancel Purchase and return to categoryview
+                    User.User.Wallet.CancelPurchase();
                     return;
                 }
             }
@@ -72,7 +68,6 @@ namespace EmilWallin_Inlämning_1.Views
             }
 
             MenuOptions.Add(new CustomOption("Complete purchase.", () => User.User.Wallet.CompletePurchase(Product)));
-            MenuOptions.Add(new CustomOption("Cancel purchase.", () => User.User.Wallet.CancelPurchase()));
         }
     }
 }

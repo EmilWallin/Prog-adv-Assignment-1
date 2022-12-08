@@ -1,11 +1,5 @@
 ﻿using EmilWallin_Inlämning_1.Products;
 using EmilWallin_Inlämning_1.Views.MenuOptions;
-using EmilWallin_Inlämning_1.Views.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmilWallin_Inlämning_1.Views
 {
@@ -18,6 +12,7 @@ namespace EmilWallin_Inlämning_1.Views
         {
             Category = category;
 
+            // Create MenuOptions for each product of the given category
             MenuOptions.AddRange(Product.Products.Where(p => p.ProductCategory == category).Select(p => new ProductOption(p)).ToList());
         }
 
@@ -31,7 +26,8 @@ namespace EmilWallin_Inlämning_1.Views
                 PrintMenuOptions();
                 SelectedIndex = InputHandler.HandleInput(MenuOptions, SelectedIndex);
 
-                if (SelectedIndex == -1) break;
+                // -1 is returned from user pressing [Backspace] (aka return/exit)
+                if (SelectedIndex == -1) return;
             }
         }
     }

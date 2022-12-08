@@ -4,7 +4,7 @@
     {
         public OneMoney()
         {
-            this.Value = 1;
+            Value = 1;
         }
     }
 }

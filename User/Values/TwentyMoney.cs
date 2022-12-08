@@ -4,7 +4,7 @@
     {
         public TwentyMoney()
         {
-            this.Value = 20;
+            Value = 20;
         }
     }
 }

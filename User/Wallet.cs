@@ -25,6 +25,7 @@ namespace EmilWallin_Inlämning_1.User
             }
         }
 
+        // Money put in to the machine
         public bool Input(Money money)
         {
             if (!Money.Any(m => m.Value == money.Value)) return false;
@@ -34,6 +35,10 @@ namespace EmilWallin_Inlämning_1.User
 
             return true;
         }
+
+        /*
+         * Methods for completing and cancelling a purchase
+        */
 
         public void CompletePurchase(Product product)
         {
@@ -57,30 +62,6 @@ namespace EmilWallin_Inlämning_1.User
 
             Money.AddRange(InputMoney);
             InputMoney.Clear();
-        }
-
-        public void PrintBalance()
-        {
-            int total = Money.Sum(m => m.Value);
-            int ones = Money.Count(b => b.Value == 1);
-            int fives = Money.Count(b => b.Value == 5);
-            int tens = Money.Count(b => b.Value == 10);
-            int twenties = Money.Count(b => b.Value == 20);
-            int fifties = Money.Count(b => b.Value == 50);
-            int hundreds = Money.Count(b => b.Value == 100);
-
-            Console.Clear();
-            Console.WriteLine($"Your wallet contains a total of {total}kr.");
-            Console.WriteLine("It consists of:");
-            Console.WriteLine($"{ones}x 1kr");
-            Console.WriteLine($"{fives}x 5kr");
-            Console.WriteLine($"{tens}x 10kr");
-            Console.WriteLine($"{twenties}x 20kr");
-            Console.WriteLine($"{fifties}x 50kr");
-            Console.WriteLine($"{hundreds}x 100kr");
-            Console.WriteLine();
-            Console.WriteLine("Press any key to continue.");
-            Console.ReadKey();
         }
 
         public int Balance

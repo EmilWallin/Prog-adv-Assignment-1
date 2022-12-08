@@ -1,20 +1,16 @@
 ﻿using EmilWallin_Inlämning_1.Navigation;
 using EmilWallin_Inlämning_1.Views.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmilWallin_Inlämning_1.Views
 {
     // Console view base class
-    internal abstract class View : IView
+    internal abstract class View
     {
         protected List<MenuOption> MenuOptions { get; set; } = new List<MenuOption>();
         protected MenuInputHandler InputHandler { get; set; } = new();
         protected int SelectedIndex { get; set; } = 0;
 
+        // Only method accessible from outside child classes. Starts the view.
         public virtual void Show()
         {
             Console.WriteLine("Empty show method.");
