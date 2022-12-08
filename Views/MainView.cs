@@ -45,7 +45,6 @@ namespace EmilWallin_Inlämning_1.Views.MainView
 
             MenuOptions.Add(new CustomOption("Backpack", () => bpView.Show()));
             MenuOptions.Add(new CustomOption("Check Balance", () => User.User.Wallet.PrintBalance()));
-            //MenuOptions.Add(new CustomOption("Leave Vending Machine"));
         }
 
         public override void Show()

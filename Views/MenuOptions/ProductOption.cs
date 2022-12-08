@@ -9,19 +9,22 @@ namespace EmilWallin_Inlämning_1.Views.MenuOptions
 {
     internal class ProductOption : MenuOption
     {
-        private Product product { get; set; }
+        private Product Product { get; set; }
 
         public ProductOption(Product product)
         {
-            this.product = product;
+            this.Product = product;
+
+            PurchaseView pv = new(Product);
+            this.Action = () => pv.Show();
         }
 
         public override string GetMenuOptionString(bool selected = false)
         {
             StringBuilder output = new();
 
-            output.AppendLine($"{product.Name,-25}Price: {product.Price}kr");
-            output.Append($"\t{product.Description}");
+            output.AppendLine($"{Product.Name,-25}Price: {Product.Price}kr");
+            output.Append($"\t{Product.Description}");
 
             if (selected) output = base.AddSelected(output);
 
