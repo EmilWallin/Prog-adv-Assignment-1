@@ -5,7 +5,7 @@ namespace EmilWallin_Inlämning_1.Views.Utils
     internal class TextUtils
     {
         // Gets a string of totalLength length, with the text centered with symbols around
-        public static string GetCenteredText(int totalLength, string text, string symbol)
+        public static string GetCenteredText(int totalLength, string text, char symbol)
         {
             int textLength = text.Length;
 
@@ -22,11 +22,11 @@ namespace EmilWallin_Inlämning_1.Views.Utils
         }
 
         // Gets a string of amount length of symbol, to simplify
-        public static string GetSeparatorString(int amount, string symbol)
+        public static string GetSeparatorString(int amount, char symbol)
         {
             StringBuilder output = new();
 
-            for (int i = 0; i < amount; i++) output.Append(symbol);
+            output.Append(symbol, amount);
 
             return output.ToString();
         }

@@ -26,9 +26,9 @@ namespace EmilWallin_Inlämning_1.Views
         protected virtual void PrintVendingMachineHeader()
         {
             int headerWidth = 102;
-            Console.WriteLine(TextUtils.GetSeparatorString(headerWidth, "*"));
-            Console.WriteLine(TextUtils.GetCenteredText(headerWidth, "VENDING MACHINE", "*"));
-            Console.WriteLine(TextUtils.GetSeparatorString(headerWidth, "*"));
+            Console.WriteLine(TextUtils.GetSeparatorString(headerWidth, '*'));
+            Console.WriteLine(TextUtils.GetCenteredText(headerWidth, "VENDING MACHINE", '*'));
+            Console.WriteLine(TextUtils.GetSeparatorString(headerWidth, '*'));
             Console.WriteLine();
         }
     }
