@@ -1,13 +1,8 @@
-﻿using EmilWallin_Inlämning_1.Products;
-using EmilWallin_Inlämning_1.Views.MenuOptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EmilWallin_Inlämning_1.Views.MenuOptions;
 
 namespace EmilWallin_Inlämning_1.Views
 {
+    // View for inspecting and using the user backpack inventory.
     internal class BackpackView : View
     {
         public BackpackView()
@@ -28,6 +23,7 @@ namespace EmilWallin_Inlämning_1.Views
 
                 SelectedIndex = InputHandler.HandleInput(MenuOptions, SelectedIndex);
 
+                // -1 is returned from user pressing [Backspace] (aka return/exit)
                 if (SelectedIndex == -1) return;
             }
         }
@@ -39,6 +35,7 @@ namespace EmilWallin_Inlämning_1.Views
             base.PrintMenuOptions();
         }
 
+        // Updating menu options every while loop iteration as to fetch the fresh inventory in case something was used
         private void UpdateMenuOptions()
         {
             MenuOptions.Clear();

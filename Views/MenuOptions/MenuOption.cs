@@ -4,6 +4,7 @@ using System.Text;
 
 namespace EmilWallin_Inlämning_1.Views
 {
+    // Base class for menuoption. Stores an Action which will be invoked once the menuoption is selected
     internal abstract class MenuOption
     {
         protected Action Action { get; set; }
@@ -18,7 +19,7 @@ namespace EmilWallin_Inlämning_1.Views
             Action?.Invoke();
         }
 
-        public virtual StringBuilder AddSelected(StringBuilder option)
+        protected virtual StringBuilder AddSelected(StringBuilder option)
         {
             return option.Insert(0, "==> ");
         }

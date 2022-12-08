@@ -4,7 +4,7 @@
     {
         public HundredMoney()
         {
-            this.Value = 100;
+            Value = 100;
         }
     }
 }

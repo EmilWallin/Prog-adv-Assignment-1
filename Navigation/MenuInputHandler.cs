@@ -1,13 +1,9 @@
 ﻿using EmilWallin_Inlämning_1.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static EmilWallin_Inlämning_1.Navigation.InputEnums;
 
 namespace EmilWallin_Inlämning_1.Navigation
 {
+    // Input handler for menus (views)
     internal class MenuInputHandler : InputHandler<MenuInputs>
     {
         public override int HandleInput(List<MenuOption> menuOptions, int selectedIndex)

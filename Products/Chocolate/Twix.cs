@@ -4,8 +4,8 @@
     {
         public Twix() : base()
         {
-            this.Name = "Twix";
-            this.Description = "A caramel shortbread chocolate bar, in a pack of two.";
+            Name = "Twix";
+            Description = "A caramel shortbread chocolate bar, in a pack of two.";
         }
     }
 }

@@ -1,10 +1,5 @@
 ﻿using EmilWallin_Inlämning_1.Navigation.Utils;
 using EmilWallin_Inlämning_1.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmilWallin_Inlämning_1.Navigation
 {
@@ -37,9 +32,6 @@ namespace EmilWallin_Inlämning_1.Navigation
             }
         }
 
-        protected virtual int ExecuteInput(string key, List<MenuOption> menuOptions, int selectedIndex)
-        {
-            throw new NotImplementedException();
-        }
+        protected abstract int ExecuteInput(string key, List<MenuOption> menuOptions, int selectedIndex);
     }
 }

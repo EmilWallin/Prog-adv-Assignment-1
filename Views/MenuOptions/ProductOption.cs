@@ -1,24 +1,22 @@
 ﻿using EmilWallin_Inlämning_1.Products;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace EmilWallin_Inlämning_1.Views.MenuOptions
 {
+    // Menu option specified for displaying product info
     internal class ProductOption : MenuOption
     {
         private Product Product { get; set; }
 
         public ProductOption(Product product)
         {
-            this.Product = product;
+            Product = product;
 
             PurchaseView pv = new(Product);
-            this.Action = () => pv.Show();
+            Action = () => pv.Show();
         }
 
+        // Creates string of the product, its price, and its description for displaying in the menu
         public override string GetMenuOptionString(bool selected = false)
         {
             StringBuilder output = new();

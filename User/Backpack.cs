@@ -1,32 +1,17 @@
 ﻿using EmilWallin_Inlämning_1.Products;
 using EmilWallin_Inlämning_1.Products.Chocolate;
 using EmilWallin_Inlämning_1.Products.Sodas;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmilWallin_Inlämning_1.User
 {
+    // Class for holding user inventory
     internal class Backpack
     {
         public List<Product> Inventory { get; }
 
         public Backpack()
         {
-            // Temp initialization with products for testing
-            Inventory = new()
-            {
-                new CocaCola(),
-                new CocaCola(),
-                new CocaCola(),
-                new CocaCola(),
-                new Snickers(),
-                new Snickers(),
-                new Snickers(),
-                new Twix()
-            };
+            Inventory = new();
         }
 
         public void AddItem(Product item)

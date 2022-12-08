@@ -4,8 +4,8 @@
     {
         public Soda()
         {
-            this.Price = 20;
-            this.ProductCategory = ProductCategories.Sodas;
+            Price = 20;
+            ProductCategory = ProductCategories.Sodas;
         }
 
         public override void Use()

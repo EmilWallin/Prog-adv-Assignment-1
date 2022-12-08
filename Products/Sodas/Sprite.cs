@@ -4,8 +4,8 @@
     {
         public Sprite() : base()
         {
-            this.Name = "Sprite";
-            this.Description = "A lemon and lime-flavored soda.";
+            Name = "Sprite";
+            Description = "A lemon and lime-flavored soda.";
         }
     }
 }

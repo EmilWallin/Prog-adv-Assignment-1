@@ -4,8 +4,8 @@
     {
         public Chocolate()
         {
-            this.Price = 12;
-            this.ProductCategory = ProductCategories.Chocolate;
+            Price = 12;
+            ProductCategory = ProductCategories.Chocolate;
         }
 
         public override void Use()

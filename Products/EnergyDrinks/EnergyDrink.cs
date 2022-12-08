@@ -4,7 +4,7 @@
     {
         public EnergyDrink()
         {
-            this.ProductCategory = ProductCategories.EnergyDrinks;
+            ProductCategory = ProductCategories.EnergyDrinks;
         }
 
         public override void Use()

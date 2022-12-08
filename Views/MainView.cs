@@ -1,27 +1,17 @@
-﻿using EmilWallin_Inlämning_1.Navigation;
-using EmilWallin_Inlämning_1.Products;
+﻿using EmilWallin_Inlämning_1.Products;
 using EmilWallin_Inlämning_1.Products.Chocolate;
 using EmilWallin_Inlämning_1.Products.EnergyDrinks;
 using EmilWallin_Inlämning_1.Products.Sodas;
 using EmilWallin_Inlämning_1.Views.MenuOptions;
-using EmilWallin_Inlämning_1.Views.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static EmilWallin_Inlämning_1.Navigation.InputEnums;
 
 namespace EmilWallin_Inlämning_1.Views.MainView
 {
-    // Main view class. Called upon from Program.Main(). Console main menu
+    // Main view class. Called upon from Program.Main(). Main Menu.
     internal class MainView : View
     {
-        private User.Wallet wallet { get; set; }
-
         public MainView()
         {
-            // Initialize Products array for showing supply
+            // Initialize Products array for showing supply throughout app
             Product.Products = new Product[]
             {
                 new Snickers(),
@@ -41,10 +31,9 @@ namespace EmilWallin_Inlämning_1.Views.MainView
                 MenuOptions.Add(new CategoryOption(category));
             }
 
-            BackpackView bpView = new();
-
-            MenuOptions.Add(new CustomOption("Backpack", () => bpView.Show()));
-            MenuOptions.Add(new CustomOption("Check Balance", () => User.User.Wallet.PrintBalance()));
+            // Additional options
+            MenuOptions.Add(new CustomOption("Backpack", () => new BackpackView().Show()));
+            MenuOptions.Add(new CustomOption("Check Balance", () => new WalletView().Show()));
         }
 
         public override void Show()
@@ -54,9 +43,10 @@ namespace EmilWallin_Inlämning_1.Views.MainView
                 Console.Clear();
                 PrintVendingMachineHeader();
 
-                PrintMenuOptions();
+                base.PrintMenuOptions();
                 SelectedIndex = InputHandler.HandleInput(MenuOptions, SelectedIndex);
 
+                // -1 is returned from user pressing [Backspace] (aka return/exit)
                 if (SelectedIndex == -1)
                 {
                     PrintGoodbyeMessage();
@@ -65,17 +55,12 @@ namespace EmilWallin_Inlämning_1.Views.MainView
             }
         }
 
-        private void PrintGoodbyeMessage()
+        private static void PrintGoodbyeMessage()
         {
             Console.Clear();
             Console.WriteLine("Now leaving the vending machine app.");
             Console.WriteLine("Goodbye!");
             Thread.Sleep(1000);
-        }
-
-        protected override void PrintMenuOptions()
-        {
-            base.PrintMenuOptions();
         }
     }
 }
