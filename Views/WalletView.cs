@@ -31,7 +31,7 @@ namespace EmilWallin_Inlämning_1.Views
         // Custom implementation where no option is visibly selected
         protected override void PrintMenuOptions()
         {
-            Console.WriteLine("Checking your backpack you find:");
+            Console.WriteLine("Checking your wallet you find:");
             Console.WriteLine();
 
             List<string> optionsOutput = MenuOptions.Select((m, i) => m.GetMenuOptionString()).ToList();
